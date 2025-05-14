@@ -5,7 +5,7 @@ pipeline {
  // Déclarer les variables d'environnement globales 
     environment { 
         // votre  username Docker Hub 
-        DOCKER_USERNAME = "ditdevops1"    
+        DOCKER_USERNAME = "chrismal"    
        // version dynamique de l'image 
         IMAGE_VERSION = "1.${BUILD_NUMBER}"  
       // nom de l'image docker 
@@ -13,7 +13,7 @@ pipeline {
      // nom du conteneur 
         DOCKER_CONTAINER = "ci-cd-html-css-app"  
      // Identifiants Docker Hub 
-        DOCKER_CREDENTIALS = credentials("c51aa3f7-82ee-4b60-828c-376f73dd3951") 
+        DOCKER_CREDENTIALS = credentials("60e3f15b-0137-4656-a766-b08adcb8e3f5") 
     }
     // Les étapes du pipeline
     stages {
