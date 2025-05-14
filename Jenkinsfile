@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Créer l'image Docker
-                    bat  "docker build -t $DOCKER_IMAGE ."
+                    sh "docker build -t $DOCKER_IMAGE ."
                 }
             }
         }
@@ -45,11 +45,9 @@ pipeline {
         stage("Push image to Docker Hub") {
             steps {
                 script {
-                    bat """
-                    # Connexion à Docker Hub
+                    sh """
                     docker login -u ${DOCKER_CREDENTIALS_USR} -p ${DOCKER_CREDENTIALS_PSW}
                     echo 'Docker login successful'
-                    # Push l'image sur Docker Hub
                     docker push $DOCKER_IMAGE
                     """
                 }
